@@ -1,0 +1,331 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calendar {
+  flex-grow: 1;
+  align-items: flex-start;
+  padding: 0 50px 20px;
+
+  &Card {
+    height: 100%;
+
+    &Theme {
+      border-radius: 2px;
+      box-shadow: 0 2px 2px 0 rgba(#000, .14), 0 3px 1px -2px rgba(#000, .2), 0 1px 5px 0 rgba(#000, .12);
+      transition: opacity .25s;
+      user-select: none;
+
+      &:hover {
+        opacity: .75;
+      }
+
+    }
+
+    &Active {
+      background-color: #fff !important;
+      color: #333 !important;
+      border: 2px solid #0776d2;
+      text-shadow: none;
+    }
+
+    &Badges {
+      position: absolute;
+      top: -6px;
+      right: 5px;
+      left: 5px;
+      height: 16px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &Badge {
+      width: 18px;
+      height: 18px;
+      margin: 0 0 0 2px;
+      border-radius: 50%;
+      box-shadow: 0 -2px 3px 0 #bdbdbd;
+    }
+  }
+
+  &Wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 1024px;
+    max-width: 1400px;
+    max-height: 1100px;
+  }
+
+  &Date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-left: 50px;
+    border-bottom: 1px solid #e0e0e0;
+
+    &Picker {
+      flex-shrink: 0;
+    }
+
+    &Nav {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      opacity: .85;
+      transition: opacity .25s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &Disabled {
+        cursor: default;
+        opacity: .25 !important;
+      }
+    }
+  }
+
+  &Container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 50px;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 5px,
+        #f3f4f7 5px,
+        #f3f4f7 10px
+      );
+    }
+  }
+
+  &Hours {
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+  }
+
+  &Hour {
+    margin: -7px 10px 0 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-size: 13px;
+    color: #bdbdbd;
+    text-align: right;
+  }
+
+  &Column {
+    position: relative;
+    flex-basis: 14.2857%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #e0e0e0;
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  &Header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #4f4f4f;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  &Cell {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 9%;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: background-color .25s;
+    border-bottom: 1px solid #e0e0e0;
+
+    &Past {
+      background-color: transparent;
+    }
+  }
+
+  &Slot {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+  }
+
+}
+
+.dialog {
+
+  &Tabs {
+    display: flex;
+    flex-grow: 0;
+    margin: 0 0 20px;
+
+    &Item {
+      position: relative;
+      box-sizing: border-box;
+      margin: 0 -1px 0 0;
+      padding: 2px 15px 0;
+      height: 40px;
+      font-family: brutal_regular;
+      font-size: 13px;
+      text-transform: uppercase;
+      background-color: #fff;
+      appearance: none;
+      transition: background-color .25s, box-shadow .25s;
+      border: none;
+      box-shadow: 0 0 0 1px #e0e0e0 inset;
+      outline: none;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background-color: rgba(#0776d2, .15);
+      }
+
+      &Text {
+        white-space: nowrap;
+      }
+
+      &Active {
+        color: #fff !important;
+        background-color: #0776d2;
+        box-shadow: 0 0 0 1px #0776d2 inset;
+        cursor: default;
+
+        &:hover {
+          background-color: #0776d2;
+        }
+      }
+
+      &Empty {
+        color: #fff;
+        background-color: #fc3d3e;
+        box-shadow: 0 0 0 1px #fc3d3e inset;
+      }
+    }
+
+    &Badge {
+      position: absolute;
+      top: -6px;
+      right: 5px;
+      width: 18px;
+      height: 18px;
+      margin: 0 0 0 2px;
+      border-radius: 50%;
+      box-shadow: 0 -2px 3px 0 #bdbdbd;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .25s;
+
+      &Active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &Title {
+    padding: 0 0 15px;
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  &Link {
+    text-decoration: none;
+  }
+
+  &Date {
+    float: right;
+    font-size: 13px;
+    color: #828282;
+  }
+
+  &Tags {
+    padding: 0 0 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #828282;
+  }
+
+  &Lead {
+    padding: 0 0 20px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &Form {
+
+    &Row {
+      position: relative;
+      margin: 0 0 15px;
+      padding: 0 0 5px;
+      border-bottom: 1px solid #f2f2f2;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+
+    &Label {
+      margin: 0 0 5px;
+      font-size: 11px;
+      color: #828282;
+    }
+
+    :global {
+      textarea {
+        top: 0;
+        margin-bottom: 0;
+    }
+  }
+
+    &Image {
+      width: 50%;
+      height: auto;
+    }
+  }
+
+}
+
