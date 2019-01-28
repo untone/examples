@@ -1,0 +1,53 @@
+.footer
+  position fixed
+  z-index 3
+  right 0
+  left 0
+  bottom 0
+  height 45px
+  display flex
+  transform translateY(100px)
+
+  &_active
+    transform translateY(0)
+    transition transform .25s
+
+  &__button
+    flex-basis 33%
+    flex-grow 1
+    margin 0
+    padding 0 5px
+    height 45px
+    font-size 12px
+    font-weight 300
+    text-align center
+    text-transform uppercase
+    letter-spacing 1px
+    transition background-color .25s, color .25s
+    border none
+    outline none
+    -webkit-appearance none
+    cursor default
+
+    &_save
+      background-color #315efb
+      color #fff
+
+      &:active
+        z-index 2
+        background-color #2740cd
+        border-color #ccc
+
+    &_clusterize
+      background-color #eaefff
+      color #315efb
+
+      &:active
+        background-color #c0ccff
+
+    &_cancel
+      background-color #fff
+      border-color #d8d8d8
+
+      &:active
+        background-color #c0ccff

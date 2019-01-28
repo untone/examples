@@ -1,0 +1,86 @@
+.button
+  display flex
+  flex-basis 130px
+  align-items center
+  justify-content center
+  height 34px
+  font-family Roboto, sans-serif
+  font-size 12px
+  font-weight 400
+  letter-spacing 1px
+  text-transform uppercase
+  text-align center
+  transition background-color .25s, color .25s
+  border none
+  outline none
+  cursor default
+
+  &_save
+    background-color #315efb
+    color #fff
+
+    &:active
+      z-index 2
+      background-color #2740cd
+      border-color #ccc
+
+  &_cancel
+    background-color #eaefff
+    color #315efb
+    margin-left 20px
+
+    &:active
+      background-color #c0ccff
+
+.disabled
+  opacity .5
+
+.index_popup
+  width 300px
+  height 160px
+
+  .index_container
+    display flex
+    padding 20px
+    flex-direction column
+
+  .index_text
+    margin-bottom 20px
+    font-size 13px
+    font-weight 500
+    line-height 1.54
+    color #282c3b
+
+  .index_input
+    margin-top 10px
+    display flex
+    flex-grow 1
+    flex-basis 100%
+    box-sizing border-box
+    height 34px
+    font-family Roboto, sans-serif
+    font-size 13px
+    font-weight 400
+    line-height 24px
+    color #262626
+    background-color rgba(#fff, 0)
+    border 1px solid #ddd
+    border-radius 0
+    outline none
+    transition border-color .3s linear
+    -webkit-appearance none
+
+    &:focus
+      padding-bottom 6px
+      border-bottom 2px solid #315efb
+
+    &::placeholder
+      font-weight 300
+      color #9b9b9b
+      padding-left 20px
+
+  .index_buttons_bar
+    margin-top 15px
+    display flex
+    align-items center
+

@@ -1,0 +1,29 @@
+.media
+  position relative
+  z-index 1
+  display flex
+  align-items center
+  justify-content center
+  margin 0 0 40px
+  width 500px
+  height 280px
+  background-color #edf0f3
+  transition opacity .25s
+
+  &__picture
+    position relative
+    z-index 2
+    display block
+    margin auto
+    width auto
+    max-width 500px
+    max-height 280px
+    height auto
+
+  &__icon
+    color #d8d8d8
+    width 32px
+    height 28px
+
+  &:hover .media__icon
+    visibility hidden

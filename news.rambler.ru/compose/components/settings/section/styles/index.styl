@@ -1,0 +1,38 @@
+.container
+  padding 20px
+  width 380px
+  min-height 362px
+
+.buttons_container
+  display flex
+  margin-top 30px
+
+.button
+  padding 5px
+  height 34px
+  font-size 12px
+  font-weight 300
+  line-height 24px
+  text-align center
+  text-transform uppercase
+  letter-spacing 1px
+  transition background-color .25s, color .25s
+  flex-basis 160px
+  cursor default
+
+  &_save
+    background-color #315efb
+    color #fff
+
+    &:active
+      z-index 2
+      background-color #2740cd
+      border-color #ccc
+
+  &_cancel
+    background-color #eaefff
+    color #315efb
+    margin-left 20px
+
+    &:active
+      background-color #c0ccff

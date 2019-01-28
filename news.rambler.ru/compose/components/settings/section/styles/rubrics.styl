@@ -1,0 +1,31 @@
+.rubric
+
+  &__title
+    font-size 14px
+    line-height 1.57
+
+  &__icon
+    margin-left 20px
+    cursor pointer
+    opacity 0
+    transition opacity .25s
+
+    &_active
+      opacity 1
+      cursor default
+
+    &_remove
+      margin-left 10px
+      cursor pointer
+      opacity 0
+      transition opacity .25s
+
+.rubrics__container
+  user-select none
+  display flex
+  margin-top 15px
+  align-items center
+
+.rubrics__container:hover .rubric__icon
+.rubrics__container:hover .rubric__icon_remove
+  opacity 1

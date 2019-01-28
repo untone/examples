@@ -1,0 +1,204 @@
+@require '../../../../assets/shared/@media'
+
+.editor
+  position relative
+
+  &__body
+    margin 0 0 25px
+    padding 0
+    min-height 1280px
+    background-color rgba(#fff, 0)
+    border none
+    outline none
+
+  &__sidebar
+    display flex
+    flex-direction column
+    position absolute
+    left -10px
+    z-index 5
+    top -10px
+    box-shadow 0 1px 7px 0 rgba(124, 130, 134, .35)
+    transition position .15s cubic-bezier(.3, 1.2, .2, 1), opacity .25s
+    visibility hidden
+    +media('medium')
+      left -70px
+      top -20px
+
+    &_visible
+      visibility visible
+
+    &_button
+      background-color #fff
+      height 44px
+
+      &::before
+        content ''
+        position absolute
+        width 3px
+        height 50%
+        opacity 0
+        visibility hidden
+        background-color #315ffb
+        transition opacity .25s
+
+      &_active
+        background-color #f6f7f9
+
+        &::before
+          visibility visible !important
+          opacity 1 !important
+
+  &__toolbar
+    position absolute
+    z-index 5
+    margin-top -75px
+    display flex
+    width 100%
+    align-items center
+    justify-content flex-start
+    background-color #fff
+    border 1px solid #d0d8e2
+    box-shadow 1px 2px 7px 0 rgba(#7c8286, .35)
+    transition position .15s cubic-bezier(.3, 1.2, .2, 1), opacity .25s
+    visibility hidden
+    opacity 0
+
+    &_visible
+      visibility visible
+
+    &_section
+      display flex
+      flex-basis 44px
+      align-items center
+      justify-content flex-start
+      flex-grow 0
+
+    &_button
+      position relative
+      flex-basis 44px
+      flex-grow 0
+      height 44px
+      color #333
+      cursor pointer
+      transition color .25s, background-color .25s
+
+      &:hover
+        background-color #edf0f3
+
+      &:after
+        content ''
+        position absolute
+        bottom 0
+        right 0
+        left 0
+        height 2px
+        background-color rgba(#fff, 0)
+        transition background-color .25s
+
+      &_active
+        color #315ffb
+
+      &_active:after
+        background-color #315ffb
+
+
+
+  &__popup
+    position absolute
+    z-index 1
+    margin-top -75px
+    padding 20px
+    width 100%
+    align-items center
+    justify-content flex-start
+    background-color #fff
+    border 1px solid #d0d8e2
+    box-shadow 1px 2px 7px 0 rgba(#7c8286, .35)
+    transition position .15s cubic-bezier(.3, 1.2, .2, 1), opacity .25s
+    visibility hidden
+    opacity 0
+
+    &_visible
+      visibility visible
+      opacity 1
+
+    &_title
+      font-size 14px
+      margin-bottom 15px
+
+    &_form
+      margin-bottom 15px
+
+    &_input
+      width 100%
+      margin-bottom 15px
+
+      &.invalid
+        border-bottom 2px solid #ff564e
+
+    &_footer
+      display flex
+      flex-basis 100%
+      align-items center
+
+    &_button
+      display flex
+      flex-grow 0
+      flex-basis 200px
+      align-items center
+      justify-content center
+      height 34px
+      font-family Roboto, sans-serif
+      font-size 12px
+      font-weight 400
+      letter-spacing 1px
+      text-transform uppercase
+      text-align center
+      transition background-color .25s, color .25s
+      border none
+      outline none
+      user-select none
+      cursor pointer
+
+      &_save
+        background-color #315efb
+        color #fff
+
+        &:active
+          z-index 2
+          background-color #2740cd
+          border-color #ccc
+
+      &_cancel
+        margin-left auto
+        color #333
+        background-color #fff
+
+  &__slider
+    position absolute
+    z-index 1
+    left -20px
+    padding 20px
+    align-items center
+    justify-content flex-start
+    background-color #fff
+    border 1px solid #d0d8e2
+    box-shadow 1px 2px 7px 0 rgba(#7c8286, .35)
+    transition position .15s cubic-bezier(.3, 1.2, .2, 1), opacity .25s
+    visibility hidden
+    opacity 0
+
+    &_visible
+      visibility visible
+      opacity 1
+
+  &__widget
+    position relative
+    z-index 1
+    width 500px
+    height 280px
+    background-color #edf0f3
+    transition opacity .25s
+    outline none
+

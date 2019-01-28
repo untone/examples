@@ -1,0 +1,36 @@
+.container
+  position relative
+  z-index 1
+  width 500px
+  height 280px
+  background-color #edf0f3
+  border 1px dashed transparent
+  cursor pointer
+  display flex
+  align-items center
+  justify-content center
+
+  &__button
+    display flex
+    align-items center
+    justify-content center
+    transition opacity .5s
+    width 160px
+    height 34px
+    font-size 12px
+    font-weight 400
+    line-height 24px
+    text-transform uppercase
+    letter-spacing 1px
+    color #fff
+    background-color #315efb
+    transition color .25s, opacity .5s
+    cursor pointer
+
+    &:active
+      z-index 2
+      background-color #2740cd
+      border-color #ccc
+
+  &_active &__button
+    opacity 0

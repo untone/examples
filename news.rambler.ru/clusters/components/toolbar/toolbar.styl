@@ -1,0 +1,47 @@
+.toolbar
+  position relative
+  z-index 2
+  display flex
+  height 40px
+  justify-content flex-start
+  flex-wrap wrap
+  padding 0 5px
+  background-color #e4e9ed
+  user-select none
+
+  &__item
+    position relative
+    display flex
+    flex-direction column
+    padding 0 10px
+    align-items center
+    white-space nowrap
+    cursor pointer
+    outline none
+
+    &:last-of-type
+      margin-left auto
+      justify-content center
+
+    &_label
+      display flex
+      align-items center
+      flex-grow 1
+      position relative
+      font-size 11px
+      transition color .25s
+
+      &:hover
+        color #888
+
+      &_checked
+        color #315ffb !important
+
+        &:after
+          content ''
+          position absolute
+          right 0
+          bottom 0
+          left 0
+          height 2px
+          background-color #315ffb

@@ -1,0 +1,66 @@
+.dropzone
+  position relative
+  z-index 1
+  width 500px
+  height 280px
+  background-color #edf0f3
+  border 1px dashed transparent
+  transition border-color .25s
+  cursor pointer
+
+  &_active
+    border-color #315efb
+
+  &__icon
+    position absolute
+    z-index 1
+    top 50%
+    right 50%
+    bottom 50%
+    left 50%
+    margin auto
+    visibility visible
+    color #315efb
+    transition opacity .25s
+    animation roll 1.5s infinite
+    transform rotate(30deg)
+
+  @keyframes roll
+    0%
+      transform rotate(0)
+    100%
+      transform rotate(360deg)
+
+  &__button
+    position absolute
+    z-index 1
+    top 0
+    right 0
+    bottom 0
+    left 0
+    margin auto
+    padding 5px
+    display flex
+    align-items center
+    justify-content center
+    transition opacity .5s
+    width 160px
+    height 34px
+    font-size 12px
+    font-weight 400
+    line-height 24px
+    text-align center
+    text-transform uppercase
+    letter-spacing 1px
+    color #fff
+    background-color #315efb
+    transition color .25s, opacity .5s
+    cursor pointer
+
+    &:active
+      z-index 2
+      background-color #2740cd
+      border-color #ccc
+
+  &_active &__button
+    opacity 0

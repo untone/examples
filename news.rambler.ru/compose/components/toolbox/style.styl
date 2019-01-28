@@ -1,0 +1,56 @@
+@require '../../../assets/shared/@media'
+
+.toolbox
+  position fixed
+  z-index 2
+  top 8px
+  right 0
+  width 50px
+  display flex
+  flex-direction column
+  align-items center
+  +media('medium')
+    position absolute
+    top 0
+    right -50px
+
+  &__wrap
+    flex-grow 1
+
+  &__button
+    position relative
+    z-index 1
+    width 34px
+    height 34px
+    padding 0
+    margin 0 0 15px
+    background-color #fff
+    border none
+    border-radius 34px
+    transition background-color .25s
+    cursor pointer
+    outline none
+    -webkit-appearance none
+
+    // &:hover
+    //   background-color rgba(#fff, .5)
+
+    &[disabled]
+      cursor not-allowed
+      opacity .5
+      background-color #FFF
+
+    &_checked
+      color #315efb
+      background-color #fff
+      // box-shadow 0 0 0 1px #315efb
+
+  &__icon
+    color #9b9b9b
+    transition color .25s
+
+  &__button_checked &__icon
+      color #315efb
+
+  &__button[disabled] &__icon
+    color #c8c8ca !important

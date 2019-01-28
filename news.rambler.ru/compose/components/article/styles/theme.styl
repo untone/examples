@@ -1,0 +1,25 @@
+$family = 'Helvetica Neue', Arial, sans-serif
+
+.news
+  color #333
+
+  &__subject
+    font-family $family
+    font-size 32px
+    font-weight bold
+    line-height 40px
+    color #333
+    -webkit-font-smoothing antialiased
+
+    &::placeholder
+      font-weight bold
+
+  &__editor
+    font-family $family
+    font-size 15px
+    line-height 23px
+    -webkit-font-smoothing antialiased
+
+    & [data-block]
+      margin-bottom 20px
+      // outline 1px solid #de0
