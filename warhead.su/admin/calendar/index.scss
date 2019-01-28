@@ -1,0 +1,15 @@
+:global {
+  .not-allowed {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      rgba(70,82,152,0.25) 5px,
+      rgba(70,82,152,0.25) 10px
+    );
+  }
+  @keyframes pulse {
+      0% {background-color: #CC3333;}
+     100% {background-color: #661111;}
+  }
+}

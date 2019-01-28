@@ -1,0 +1,197 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.basket {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 75px;
+  display: flex;
+  margin: 0 -15px;
+  padding: 5px 60px 5px 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  box-shadow: 0 -4px 4px 0 rgba(#000, .05) inset;
+
+  &Container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 1024px;
+    max-width: 1400px;
+    height: 100%;
+    min-height: 80px;
+    padding-left: 50px;
+  }
+
+  &Card {
+    box-sizing: border-box;
+    padding: 0 5px 5px 0;
+    flex-basis: 14.2857%;
+    height: 65px;
+  }
+}
+
+.calendar {
+  flex-grow: 1;
+  align-items: flex-start;
+  padding: 0 50px 20px;
+
+  &Card {
+    height: 100%;
+  }
+
+  &Wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 1024px;
+    max-width: 1400px;
+    max-height: 1100px;
+  }
+
+  &Date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-left: 50px;
+    border-bottom: 1px solid #e0e0e0;
+
+    &Picker {
+      flex-shrink: 0;
+    }
+
+    &Nav {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      opacity: .85;
+      transition: opacity .25s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &Container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    margin: 0 0 0 50px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 5px,
+        #f3f4f7 5px,
+        #f3f4f7 10px
+      );
+    }
+  }
+
+  // &Hours {
+  //   top: 0;
+  //   margin-top: 50px;
+  //   left: 0;
+  //   bottom: 0;
+  //   display: flex;
+  //   flex-shrink: 0;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   width: 50px;
+  // }
+
+  // &Hour {
+  //   margin: -7px 10px 0 0;
+  //   flex-grow: 1;
+  //   flex-shrink: 0;
+  //   font-size: 13px;
+  //   color: #bdbdbd;
+  //   text-align: right;
+  // }
+
+  &Column {
+    position: relative;
+    flex-basis: 14.2857%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #e0e0e0;
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  &Header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #4f4f4f;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  &Cell {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 9%;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: background-color .25s;
+    border-bottom: 1px solid #e0e0e0;
+
+    &Past {
+      background-color: transparent;
+    }
+
+    &[data-hour]:before {
+      position: absolute;
+      top: 0;
+      left: -50px;
+      width: 40px;
+      content: attr(data-hour);
+      font-size: 13px;
+      color: #bdbdbd;
+      text-align: right;
+    }
+  }
+
+  &Slot {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+  }
+
+}
